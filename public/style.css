@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f7fb;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 680px;
+  padding: 80px 40px;
+  margin: 0 auto;
+}
+
+.question-block {
+  border-bottom: 1px solid #dbdef0;
+  padding: 15px 0;
+  max-width: 600px;
+}
+
+.question {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #293264;
+}
+
+.question-answers {
+  margin-top: 12px;
+  display: flex;
+  gap: 13px;
+}
+
+.question-answer {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  border: 1px solid #4d5b9e;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #293264;
+  border-radius: 10px;
+}
+
+.check-button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: #f5f7fb;
+  font-size: 12px;
+  font-weight: 700;
+  width: 120px;
+  height: 35px;
+  background: #4d5b9e;
+  border-radius: 10px;
+  border: none;
+}
+
+.score-container {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.play-again-button {
+  color: #f5f7fb;
+  font-size: 12px;
+  font-weight: 700;
+  width: 120px;
+  height: 35px;
+  background: #4d5b9e;
+  border-radius: 10px;
+  border: none;
+}
+
+.start-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.start-game-title {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 31px;
+  color: #293264;
+}
+
+.start-game-tagline {
+  margin: 7px 0 0 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #293264;
+}
+
+.start-game-button {
+  margin-top: 30px;
+  padding: 17px 60px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #4d5b9e;
+  border: none;
+  border-radius: 15px;
+}
