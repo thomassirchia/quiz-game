@@ -1,8 +1,4 @@
-import { useState } from "react";
-
 export default function Settings(props) {
-  // const [numberOfQuestions, setNumberOfQuestions] = useState(5);
-
   return (
     <div className="settings">
       <div>
