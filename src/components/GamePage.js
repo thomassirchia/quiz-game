@@ -15,7 +15,7 @@ export default function GamePage(props) {
 
   return (
     <div className="container">
-      <h1 className="game-page-title">Quizzical</h1>
+      <h1 className="game-page-title">TriviaGame</h1>
       <Settings
         numQuestions={props.numQuestions}
         setNumQuestions={props.setNumQuestions}

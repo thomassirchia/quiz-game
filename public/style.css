@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* 62.5% of 16px browser font size is 10px */
+  font-size: 62.5%;
+}
+
 body {
   background-color: #f5f7fb;
   margin: 0;
@@ -15,30 +20,30 @@ body {
 }
 
 .container {
-  max-width: 700px;
-  padding: 60px 20px 0 20px;
+  max-width: 70rem;
+  padding: 6rem 2rem 0 2rem;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 
 .question-block {
   border-bottom: 1px solid #dbdef0;
-  padding: 15px 0;
+  padding: 1.5rem 0;
 }
 
 .question {
   margin: 0;
   font-family: "Karla", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
   color: #293264;
 }
 
 .question-answers {
-  margin-top: 12px;
+  margin-top: 1.2rem;
   display: flex;
-  gap: 13px;
+  gap: 1.3rem;
   cursor: pointer;
 }
 
@@ -46,10 +51,10 @@ body {
   font-family: "Inter", sans-serif;
   text-align: center;
   border: 1px solid #4d5b9e;
-  padding: 4px 8px;
+  padding: 0.4rem 0.8rem;
   display: flex;
   align-items: center;
-  font-size: 11px;
+  font-size: 1.2rem;
   color: #293264;
   border-radius: 10px;
 }
@@ -57,31 +62,31 @@ body {
 .check-button {
   display: block;
   /* margin: 0 auto; */
-  margin-top: 30px;
+  margin-top: 3rem;
   color: #f5f7fb;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 700;
-  width: 120px;
-  height: 35px;
+  width: 12rem;
+  height: 3.5rem;
   background: #4d5b9e;
   border-radius: 10px;
   border: none;
 }
 
 .score-container {
-  margin-top: 30px;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
   justify-content: start;
 }
 
 .play-again-button {
   color: #f5f7fb;
-  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: 700;
-  width: 120px;
-  height: 35px;
+  width: 12rem;
+  height: 3.5rem;
   background: #4d5b9e;
   border-radius: 10px;
   border: none;
@@ -99,22 +104,22 @@ body {
   margin: 0;
   font-family: "Karla", sans-serif;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 6.4rem;
   color: #293264;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .start-game-tagline {
-  margin: 7px 0 0 0;
+  margin: 0.7rem 0 0 0;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   color: #293264;
 }
 
 .start-game-button {
-  margin-top: 30px;
-  padding: 17px 60px;
+  margin-top: 3rem;
+  padding: 1.7rem 6rem;
   font-weight: 700;
   color: #ffffff;
   background: #4d5b9e;
@@ -126,36 +131,40 @@ body {
   margin: 0;
   font-family: "Karla", sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 4rem;
   color: #293264;
-  /* margin-bottom: 20px; */
 }
 
 /* Settings */
 .settings {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
+  font-size: 1.6rem;
   justify-content: start;
-  padding: 30px 0 30px 0;
-  margin-bottom: 30px;
+  padding: 3rem 0 3rem 0;
+  margin-bottom: 3rem;
   border-bottom: 1px solid #293264;
 }
 
 label {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 
 input,
 select {
   color: #293264;
+  font-size: 1.6rem;
   font-family: "Karla", sans-serif;
+  border-radius: 10px;
+  border: 1px solid #293264;
+  padding: 0.4rem;
 }
 
 .number-of-questions {
-  width: 50px;
+  width: 5rem;
   text-align: right;
 }
 
 .category-select {
-  width: 200px;
+  width: 20rem;
 }

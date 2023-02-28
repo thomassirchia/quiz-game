@@ -6,7 +6,7 @@ export default function StartGame(props) {
 
   return (
     <div className="start-game">
-      <h1 className="start-page-title">Quizzical</h1>
+      <h1 className="start-page-title">TriviaGame</h1>
       <Settings
         numQuestions={props.numQuestions}
         setNumQuestions={props.setNumQuestions}
