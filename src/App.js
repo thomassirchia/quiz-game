@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import Question from "./components/Question";
 import StartGame from "./components/StartGame";
+import Settings from "./components/Settings";
 import { v4 as uuidv4 } from "uuid";
 import { decode } from "html-entities";
 
@@ -11,9 +12,16 @@ export default function App() {
   const [playAgain, setPlayAgain] = useState(false);
   const [checkAnswers, setCheckAnswers] = useState(false);
   const [score, setScore] = useState(0);
+  const [numQuestions, setNumQuestions] = useState(5);
+  const [category, setCategory] = useState("9");
+
+  const apiUrl =
+    category === "any"
+      ? `https://opentdb.com/api.php?amount=${numQuestions}`
+      : `https://opentdb.com/api.php?amount=${numQuestions}&category=${category}`;
 
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=5")
+    fetch(apiUrl)
       .then((res) => res.json())
       .then((data) => {
         const questionsArray = data.results.map((item) => {
@@ -49,7 +57,7 @@ export default function App() {
         });
         setQuestions(questionsArray);
       });
-  }, [playAgain]);
+  }, [playAgain, numQuestions, category, apiUrl]);
 
   function handleSelect(event, questionId, answerId) {
     if (checkAnswers) {
@@ -121,6 +129,13 @@ export default function App() {
     <>
       {gameStarted ? (
         <div className="container">
+          <h1 className="game-page-title">Quizzical</h1>
+          <Settings
+            numQuestions={numQuestions}
+            setNumQuestions={setNumQuestions}
+            category={category}
+            setCategory={setCategory}
+          />
           {questionElements}
 
           {checkAnswers && (
@@ -144,7 +159,13 @@ export default function App() {
           )}
         </div>
       ) : (
-        <StartGame handleStartGame={handleStartGame} />
+        <StartGame
+          handleStartGame={handleStartGame}
+          numQuestions={numQuestions}
+          setNumQuestions={setNumQuestions}
+          category={category}
+          setCategory={setCategory}
+        />
       )}
     </>
   );

@@ -6,6 +6,7 @@ body {
   background-color: #f5f7fb;
   margin: 0;
   padding: 0;
+  color: #293264;
   font-family: "Karla", sans-serif;
 }
 
@@ -14,15 +15,15 @@ body {
 }
 
 .container {
-  max-width: 680px;
-  padding: 80px 40px;
+  max-width: 700px;
+  padding: 60px 20px 0 20px;
   margin: 0 auto;
+  margin-bottom: 50px;
 }
 
 .question-block {
   border-bottom: 1px solid #dbdef0;
   padding: 15px 0;
-  max-width: 600px;
 }
 
 .question {
@@ -38,6 +39,7 @@ body {
   margin-top: 12px;
   display: flex;
   gap: 13px;
+  cursor: pointer;
 }
 
 .question-answer {
@@ -54,7 +56,7 @@ body {
 
 .check-button {
   display: block;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 30px;
   color: #f5f7fb;
   font-size: 12px;
@@ -71,7 +73,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: center;
+  justify-content: start;
 }
 
 .play-again-button {
@@ -93,12 +95,13 @@ body {
   height: 100vh;
 }
 
-.start-game-title {
+.start-page-title {
   margin: 0;
   font-family: "Karla", sans-serif;
   font-weight: 700;
-  font-size: 31px;
+  font-size: 64px;
   color: #293264;
+  margin-bottom: 20px;
 }
 
 .start-game-tagline {
@@ -117,4 +120,42 @@ body {
   background: #4d5b9e;
   border: none;
   border-radius: 15px;
+}
+
+.game-page-title {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #293264;
+  /* margin-bottom: 20px; */
+}
+
+/* Settings */
+.settings {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  padding: 30px 0 30px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #293264;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input,
+select {
+  color: #293264;
+  font-family: "Karla", sans-serif;
+}
+
+.number-of-questions {
+  width: 50px;
+  text-align: right;
+}
+
+.category-select {
+  width: 200px;
 }
