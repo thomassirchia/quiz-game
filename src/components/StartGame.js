@@ -1,5 +1,5 @@
 import Settings from "./Settings";
-import { categoryNames } from "./categoryData";
+import { categoryNames } from "../categoryData";
 
 export default function StartGame(props) {
   const categoryName = categoryNames[props.category];
