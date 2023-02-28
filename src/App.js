@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import Question from "./components/Question";
 import StartGame from "./components/StartGame";
-import Settings from "./components/Settings";
+import GamePage from "./components/GamePage";
+
 import { v4 as uuidv4 } from "uuid";
 import { decode } from "html-entities";
 
@@ -29,6 +29,7 @@ export default function App() {
           const randomIndex = Math.floor(
             Math.random() * (item.incorrect_answers.length + 1)
           );
+
           if (
             item.correct_answer === "True" ||
             item.correct_answer === "False"
@@ -55,6 +56,7 @@ export default function App() {
             id: uuidv4(),
           };
         });
+
         setQuestions(questionsArray);
       });
   }, [playAgain, numQuestions, category, apiUrl]);
@@ -114,50 +116,21 @@ export default function App() {
     setScore(0);
   }
 
-  const questionElements = questions.map((question, index) => (
-    <Question
-      key={index}
-      id={question.id}
-      question={question.question}
-      answers={question.answers}
-      handleSelect={handleSelect}
-      checkAnswers={checkAnswers}
-    />
-  ));
-
   return (
     <>
       {gameStarted ? (
-        <div className="container">
-          <h1 className="game-page-title">Quizzical</h1>
-          <Settings
-            numQuestions={numQuestions}
-            setNumQuestions={setNumQuestions}
-            category={category}
-            setCategory={setCategory}
-          />
-          {questionElements}
-
-          {checkAnswers && (
-            <div className="score-container">
-              <p className="score">
-                You scored {score}/{questions.length} correct answers
-              </p>
-              <button
-                className="btn play-again-button"
-                onClick={handlePlayAgain}
-              >
-                Play Again
-              </button>
-            </div>
-          )}
-
-          {!checkAnswers && (
-            <button className="btn check-button" onClick={handleCheckAnswers}>
-              Check Answers
-            </button>
-          )}
-        </div>
+        <GamePage
+          questions={questions}
+          handleSelect={handleSelect}
+          checkAnswers={checkAnswers}
+          handleCheckAnswers={handleCheckAnswers}
+          handlePlayAgain={handlePlayAgain}
+          score={score}
+          numQuestions={numQuestions}
+          setNumQuestions={setNumQuestions}
+          category={category}
+          setCategory={setCategory}
+        />
       ) : (
         <StartGame
           handleStartGame={handleStartGame}
