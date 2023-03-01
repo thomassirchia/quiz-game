@@ -1,4 +1,3 @@
-import Settings from "./Settings";
 import Question from "./Question";
 
 export default function GamePage(props) {
