@@ -83,6 +83,11 @@ body {
   margin: 3rem auto 0;
 }
 
+.check-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .score-container {
   display: flex;
   justify-content: center;

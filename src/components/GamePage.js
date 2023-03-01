@@ -13,6 +13,22 @@ export default function GamePage(props) {
     />
   ));
 
+  const selectedAnswers = props.questions.map((question) => {
+    const answers = question.answers;
+    return answers.map((answer) => answer.isSelected).includes(true);
+  });
+
+  let numberSelectedAnswers = 0;
+
+  selectedAnswers.forEach((answer) => {
+    if (answer) {
+      numberSelectedAnswers++;
+    }
+  });
+
+  const userAnsweredAllQuestions =
+    numberSelectedAnswers === props.questions.length;
+
   return (
     <div className="container">
       <h1 className="game-page-title">TriviaQuiz</h1>
@@ -39,7 +55,11 @@ export default function GamePage(props) {
       )}
 
       {!props.checkAnswers && (
-        <button className="btn check-button" onClick={props.handleCheckAnswers}>
+        <button
+          className="btn check-button"
+          onClick={props.handleCheckAnswers}
+          disabled={!userAnsweredAllQuestions}
+        >
           Check Answers
         </button>
       )}
