@@ -4,7 +4,7 @@ export const categoryNames = {
   10: "Entertainment: Book",
   11: "Entertainment: Film",
   12: "Entertainment: Music",
-  13: "Entertainment: Musicals &amp; Theatres",
+  13: "Entertainment: Musicals & Theatres",
   14: "Entertainment: Television",
   15: "Entertainment: Video Games",
   16: "Entertainment: Board Games",

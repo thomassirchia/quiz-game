@@ -8,21 +8,25 @@ html {
 }
 
 body {
-  font-family: "Karla", sans-serif;
-  color: #293264;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+  color: #352c5a;
   background-color: #f5f7fb;
   padding: 0;
   margin: 0;
+  background: no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80");
 }
 
 .btn:hover {
   cursor: pointer;
-}
-
-.container {
-  max-width: 70rem;
-  padding: 6rem 2rem 0 2rem;
-  margin: 0 auto 5rem;
 }
 
 /* Start Game */
@@ -31,60 +35,94 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-width: 70rem;
+  padding: 4rem;
+  margin: 0 auto;
+  border-radius: 16px;
 }
 
-.start-page-title {
-  font-family: "Karla", sans-serif;
+.start-game-title {
+  font-family: "Tilt Warp", sans-serif;
   font-size: 6.4rem;
   font-weight: 700;
-  color: #293264;
+  color: #452487;
   margin: 0 0 2rem;
 }
 
 .start-game-tagline {
-  font-family: "Inter", sans-serif;
+  font-family: "NunitoSans", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   color: #293264;
+  height: 3.7rem;
+  max-width: 41rem;
   margin: 4.8rem 0 0 0;
 }
 
-.start-game-button {
-  font-weight: 700;
+.btn-start-game {
+  /* padding: 1.7rem 6rem; */
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: #ffffff;
-  background: #4d5b9e;
-  padding: 1.7rem 6rem;
+  padding: 1.3rem 2rem;
+  background: #4f28a0;
+  border-radius: 3rem;
   border: none;
-  border-radius: 15px;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.btn-start-game:hover,
+.btn-start-game:active {
+  background-color: #472590;
 }
 
 /* Game Page */
+.game-page-container {
+  position: relative;
+  max-width: 74rem;
+  padding: 3rem 3rem 3rem 3rem;
+  margin: 0 auto 5rem;
+  border-radius: 16px;
+}
+
 .game-page-title {
-  font-family: "Karla", sans-serif;
-  font-size: 4rem;
+  font-family: "Tilt Warp", sans-serif;
+  font-size: 6.4rem;
   font-weight: 700;
+  color: #452487;
   text-align: center;
-  color: #293264;
   margin: 0;
 }
 
-.check-button {
+.game-page-tagline {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0rem 0 3rem 0;
+}
+
+.btn-check {
   display: block;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f5f7fb;
-  width: 12rem;
-  height: 3.5rem;
-  background: #4d5b9e;
-  border-radius: 10px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 1.3rem 2rem;
+  background: #4f28a0;
+  border-radius: 3rem;
   border: none;
   margin: 3rem auto 0;
 }
 
-.check-button:disabled {
+.btn-check:hover,
+.btn-check:active {
+  background-color: #472590;
+}
+
+.btn-check:disabled {
   opacity: 0.5;
+  pointer-events: none;
   cursor: not-allowed;
 }
 
@@ -96,15 +134,20 @@ body {
   margin-top: 3rem;
 }
 
-.play-again-button {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f5f7fb;
-  width: 12rem;
-  height: 3.5rem;
-  background: #4d5b9e;
+.btn-play-again {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 1.3rem 2rem;
+  background: #4f28a0;
+  border-radius: 3rem;
   border: none;
-  border-radius: 10px;
+}
+
+.btn-play-again:hover,
+.btn-play-again:active {
+  background-color: #472590;
 }
 
 .score {
@@ -118,11 +161,11 @@ body {
 }
 
 .question {
-  font-family: "Karla", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.9rem;
-  color: #293264;
+  color: #352c5a;
   margin: 0;
 }
 
@@ -136,36 +179,44 @@ body {
 .question-answer {
   display: flex;
   align-items: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.2rem;
-  color: #293264;
+  color: #352c5a;
   text-align: center;
-  padding: 0.4rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.4rem 1.2rem;
   border: 1px solid #4d5b9e;
-  border-radius: 10px;
+  border-radius: 3rem;
+}
+
+.question-answer:hover,
+.question-answer:active {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 /* Settings */
 .settings {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   gap: 2rem;
   font-size: 1.6rem;
   padding: 3rem 0 3rem 0;
   border-bottom: 1px solid #293264;
 }
 
-label {
-  margin-right: 1rem;
+.settings-label {
+  margin: 0 0.5rem 0 0;
 }
 
 input,
 select {
-  font-family: "Karla", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 1.6rem;
-  color: #293264;
-  border: 1px solid #293264;
-  border-radius: 10px;
+  color: #352c5a;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #352c5a;
+  border-radius: 4px;
   padding: 0.4rem;
 }
 
@@ -176,4 +227,35 @@ select {
 
 .category-select {
   width: 20rem;
+}
+
+/* Misc */
+.card-effect {
+  box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+  backdrop-filter: blur(14px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-grow {
+  transition: all 200ms ease-out;
+}
+
+.btn-grow:hover {
+  /* transform: scale(1.03); */
+  /* scale: 1.03;
+  box-shadow: 0 15px 15px rgba(129, 124, 124, 0.2); */
+  transform: translate3d(0px, -2px, 0px);
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 6px 0px;
+}
+
+.back-arrow {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  fill: #352c5a;
+}
+
+.back-arrow:hover {
+  cursor: pointer;
 }

@@ -2,7 +2,9 @@ export default function Settings(props) {
   return (
     <div className="settings">
       <div>
-        <label for="number-of-questions">Number of questions</label>
+        <label htmlFor="number-of-questions" className="settings-label">
+          Questions
+        </label>
         <input
           type="number"
           id="number-of-questions"
@@ -11,8 +13,11 @@ export default function Settings(props) {
           onChange={(e) => props.setNumQuestions(e.target.value)}
         />
       </div>
+
       <div>
-        <label for="category">Category</label>
+        <label htmlFor="category" className="settings-label">
+          Category
+        </label>
         <select
           name="trivia_category"
           id="category"

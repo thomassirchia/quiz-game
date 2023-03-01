@@ -5,8 +5,8 @@ export default function StartGame(props) {
   const categoryName = categoryNames[props.category];
 
   return (
-    <div className="start-game">
-      <h1 className="start-page-title">TriviaQuiz</h1>
+    <div className="start-game card-effect">
+      <h1 className="start-game-title">TriviaQuiz</h1>
       <Settings
         numQuestions={props.numQuestions}
         setNumQuestions={props.setNumQuestions}
@@ -15,9 +15,12 @@ export default function StartGame(props) {
       />
       {/* <h1 className="start-game-title">Start Game</h1> */}
       <h3 className="start-game-tagline">
-        {props.numQuestions} {categoryName} Trivia Questions
+        You will get {props.numQuestions} {categoryName} trivia questions
       </h3>
-      <button className="btn start-game-button" onClick={props.handleStartGame}>
+      <button
+        className="btn btn-start-game btn-grow"
+        onClick={props.handleStartGame}
+      >
         Start Game
       </button>
     </div>

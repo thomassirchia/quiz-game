@@ -5,15 +5,17 @@ export default function Question(props) {
     if (props.checkAnswers) {
       if (item.isCorrect) {
         styles = {
-          backgroundColor: "#94D7A2",
-          border: "1px solid #94D7A2",
+          backgroundColor: "rgb(225, 255, 212)",
+          border: "1px solid rgb(225, 255, 212)", //#94D7A2
+          color: "rgb(68, 128, 40)",
+          fontWeight: 700,
         };
       } else if (item.isSelected) {
         styles = {
-          backgroundColor: "#F8BCBC",
-          border: "1px solid #F8BCBC",
+          backgroundColor: "#fcaeae", //#fcaea8
+          border: "1px solid #fcaeae",
           color: "#4D5B9E",
-          opacity: "0.75",
+          opacity: "0.8",
         };
       } else {
         styles = {
@@ -22,14 +24,17 @@ export default function Question(props) {
       }
     } else {
       styles = {
-        backgroundColor: item.isSelected ? "#D6DBF5" : "#FFFFFF",
-        border: item.isSelected ? "1px solid #D6DBF5" : "1px solid #4D5B9E",
+        backgroundColor: item.isSelected
+          ? "#2f1960"
+          : "rgba(255, 255, 255, 0.5)",
+        border: item.isSelected ? "1px solid #2f1960" : "1px solid #4D5B9E",
+        color: item.isSelected ? "#FFFFFF" : "",
       };
     }
 
     return (
       <div
-        className="question-answer"
+        className="question-answer btn-grow"
         style={styles}
         key={index}
         onClick={(event) => props.handleSelect(event, props.id, item.id)}

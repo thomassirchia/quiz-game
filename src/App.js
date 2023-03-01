@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import StartGame from "./components/StartGame";
 import GamePage from "./components/GamePage";
 
+import { categoryNames } from "./categoryData";
+
 import { v4 as uuidv4 } from "uuid";
 import { decode } from "html-entities";
 
@@ -14,6 +16,7 @@ export default function App() {
   const [score, setScore] = useState(0);
   const [numQuestions, setNumQuestions] = useState(5);
   const [category, setCategory] = useState("9");
+  const categoryName = categoryNames[category];
 
   const apiUrl =
     category === "any"
@@ -130,6 +133,8 @@ export default function App() {
           setNumQuestions={setNumQuestions}
           category={category}
           setCategory={setCategory}
+          categoryName={categoryName}
+          setGameStarted={setGameStarted}
         />
       ) : (
         <StartGame
@@ -138,6 +143,7 @@ export default function App() {
           setNumQuestions={setNumQuestions}
           category={category}
           setCategory={setCategory}
+          categoryName={categoryName}
         />
       )}
     </>

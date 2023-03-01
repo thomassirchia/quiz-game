@@ -30,14 +30,26 @@ export default function GamePage(props) {
     numberSelectedAnswers === props.questions.length;
 
   return (
-    <div className="container">
+    <div className="game-page-container card-effect">
+      {/* <img src="images/circle-arrow-left.svg" alt="Back Button"></img> */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        className="back-arrow btn-grow"
+        onClick={() => props.setGameStarted(false)}
+      >
+        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+      </svg>
       <h1 className="game-page-title">TriviaQuiz</h1>
-      <Settings
+      <h3 className="game-page-tagline">
+        {props.numQuestions} {props.categoryName} Trivia Questions
+      </h3>
+      {/* <Settings
         numQuestions={props.numQuestions}
         setNumQuestions={props.setNumQuestions}
         category={props.category}
         setCategory={props.setCategory}
-      />
+      /> */}
       {questionElements}
 
       {props.checkAnswers && (
@@ -46,7 +58,7 @@ export default function GamePage(props) {
             You scored {props.score}/{props.questions.length} correct answers
           </p>
           <button
-            className="btn play-again-button"
+            className="btn btn-play-again btn-grow"
             onClick={props.handlePlayAgain}
           >
             Play Again
@@ -56,7 +68,7 @@ export default function GamePage(props) {
 
       {!props.checkAnswers && (
         <button
-          className="btn check-button"
+          className="btn btn-check btn-grow"
           onClick={props.handleCheckAnswers}
           disabled={!userAnsweredAllQuestions}
         >
