@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
   color: #352c5a;
   background-color: #f5f7fb;
@@ -30,7 +30,12 @@ body {
 }
 
 /* Start Game */
-.start-game {
+.start-game-container {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.start-game-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,6 +85,10 @@ body {
 /* Game Page */
 .game-page-container {
   position: relative;
+  padding: 2rem;
+}
+
+.game-page-card {
   max-width: 74rem;
   padding: 3rem 3rem 3rem 3rem;
   margin: 0 auto 5rem;
@@ -171,6 +180,7 @@ body {
 
 .question-answers {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.3rem;
   margin-top: 1.2rem;
   cursor: pointer;
@@ -254,8 +264,42 @@ select {
   width: 2rem;
   border-radius: 50%;
   fill: #352c5a;
+  left: 40px;
+  top: 40px;
+  z-index: 1;
 }
 
 .back-arrow:hover {
   cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .start-game-card {
+    padding: 2.4rem;
+  }
+
+  .start-game-title {
+    font-size: 5.6rem;
+    margin: 0;
+  }
+
+  .start-game-tagline {
+    text-align: center;
+  }
+
+  .settings {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .game-page-title {
+    font-size: 5.6rem;
+    margin: 0;
+  }
+
+  .back-arrow {
+    left: 32px;
+    top: 32px;
+  }
 }
