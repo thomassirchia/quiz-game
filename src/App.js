@@ -24,8 +24,20 @@ export default function App() {
       : `https://opentdb.com/api.php?amount=${numQuestions}&category=${category}`;
 
   useEffect(() => {
-    fetch(apiUrl)
-      .then((res) => res.json())
+    const controller = new AbortController();
+    const signal = controller.signal;
+    // if (!res.ok) {
+    //   throw Error("Count not fetch the data for that resource");
+    // }
+
+    fetch(apiUrl, { signal: signal })
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("Count not fetch the data for that resource");
+        }
+
+        return res.json();
+      })
       .then((data) => {
         const questionsArray = data.results.map((item) => {
           let answerChoices = [...item.incorrect_answers];
@@ -39,7 +51,6 @@ export default function App() {
           ) {
             answerChoices = ["True", "False"];
           } else {
-            console.log(randomIndex);
             answerChoices.splice(randomIndex, 0, item.correct_answer);
           }
 
@@ -61,7 +72,18 @@ export default function App() {
         });
 
         setQuestions(questionsArray);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") {
+          console.log("fetch aborted");
+        } else {
+          console.log(err.message);
+        }
       });
+
+    return () => {
+      controller.abort();
+    };
   }, [playAgain, numQuestions, category, apiUrl]);
 
   function handleSelect(event, questionId, answerId) {
